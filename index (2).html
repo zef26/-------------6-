@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YourBrand Auto Insurance — Check Eligibility</title>
+<meta name="description" content="Answer three quick questions to see if you’re eligible to speak with a licensed agent about auto insurance options." />
+
+<link rel="stylesheet" href="style.css" />
+
+
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="header">
+    <!-- Left: content -->
+    <section class="card" aria-labelledby="heroTitle">
+      <div class="logo" aria-label="YourBrand logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 2l7 4v4c0 5-3 9-7 12C8 19 5 15 5 10V6l7-4z" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand">YourBrand Insurance Services</div>
+      </div>
+      <h1 id="heroTitle">Auto Insurance — Check Your Eligibility</h1>
+      <p class="sub">Answer three quick questions. If eligible, you’ll see a “Call Now” button to speak with a licensed agent. No fees. No obligation.</p>
+
+      <div class="badges" aria-label="Trust highlights">
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 11v3m0 4a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" stroke-width="2"/>
+            <path d="M8 11a4 4 0 1 1 8 0v2H8v-2z" stroke-width="2"/>
+          </svg> Secure & Private
+        </div>
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M9 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="9" stroke-width="2"/>
+          </svg> Licensed Agents
+        </div>
+        <div class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 7h16M4 12h10M4 17h7" stroke-width="2" stroke-linecap="round"/>
+          </svg> 3 Steps • Under 2 minutes
+        </div>
+      </div>
+
+      <button class="cta" id="startQuizBtn" type="button">Start my eligibility check</button>
+    </section>
+
+    <!-- Right: trust panel -->
+    <aside class="card proof" role="complementary" aria-label="About YourBrand">
+      <h3>Why people choose YourBrand</h3>
+      <ul class="checks">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M9 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>Independent service connecting you with licensed insurance agents.</div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 7h16M4 12h10M4 17h7" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div>Simple process: answer basic questions, check eligibility, then call.</div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 11v3m0 4a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" stroke-width="2"/>
+          </svg>
+          <div>No forms to submit here. Your call goes directly to a licensed professional.</div>
+        </li>
+      </ul>
+      <p class="disclosure">
+        <strong>Disclosure:</strong> YourBrand Insurance Services is not an insurer. We connect consumers to licensed insurance agencies and carriers.
+      </p>
+    </aside>
+  </div>
+
+  <!-- QUIZ -->
+  <main class="main" aria-labelledby="quizTitle">
+    <section class="card" id="quizCard">
+      <h2 id="quizTitle" style="margin:0 0 6px;font-size:20px;">Quick Eligibility Questions</h2>
+      <div class="progress" aria-hidden="true"><div id="bar" class="bar"></div></div>
+
+      <form id="quiz" autocomplete="off">
+        <!-- Step 1 -->
+        <fieldset class="step" data-step="1">
+          <legend class="legend">Are you currently in the United States?</legend>
+          <div class="options">
+            <input type="radio" id="us_yes" name="inUS" value="yes">
+            <label class="option" for="us_yes"><span class="dot"></span><span class="text">Yes</span></label>
+
+            <input type="radio" id="us_no" name="inUS" value="no">
+            <label class="option" for="us_no"><span class="dot"></span><span class="text">No</span></label>
+          </div>
+          <div class="nav">
+            <button type="button" class="btn next" id="next1" disabled>Next</button>
+          </div>
+        </fieldset>
+
+        <!-- Step 2 -->
+        <fieldset class="step" data-step="2" hidden>
+          <legend class="legend">Do you currently have auto insurance?</legend>
+          <div class="options">
+            <input type="radio" id="ins_yes" name="insured" value="yes">
+            <label class="option" for="ins_yes"><span class="dot"></span><span class="text">Yes, I’m insured</span></label>
+
+            <input type="radio" id="ins_no" name="insured" value="no">
+            <label class="option" for="ins_no"><span class="dot"></span><span class="text">No, not insured</span></label>
+
+            <input type="radio" id="ins_exp" name="insured" value="expired">
+            <label class="option" for="ins_exp"><span class="dot"></span><span class="text">It expired, I want to renew</span></label>
+          </div>
+          <div class="nav">
+            <button type="button" class="btn" id="back2">Back</button>
+            <button type="button" class="btn next" id="next2" disabled>Next</button>
+          </div>
+        </fieldset>
+
+        <!-- Step 3 -->
+        <fieldset class="step" data-step="3" hidden>
+          <legend class="legend">What year is your vehicle?</legend>
+          <div class="options">
+            <input type="radio" id="veh_new" name="veh" value="2013plus">
+            <label class="option" for="veh_new"><span class="dot"></span><span class="text">2013 or newer</span></label>
+
+            <input type="radio" id="veh_mid" name="veh" value="2008-2012">
+            <label class="option" for="veh_mid"><span class="dot"></span><span class="text">2008–2012</span></label>
+
+            <input type="radio" id="veh_old" name="veh" value="2007older">
+            <label class="option" for="veh_old"><span class="dot"></span><span class="text">2007 or older</span></label>
+          </div>
+          <div class="nav">
+            <button type="button" class="btn" id="back3">Back</button>
+            <button type="button" class="btn next" id="done3" disabled>See my result</button>
+          </div>
+        </fieldset>
+
+        <!-- Results -->
+        <div id="resultGood" class="result" role="region" aria-live="polite">
+          <div class="result-card">
+            <strong>✅ You may be eligible to speak with a licensed agent.</strong>
+            <div class="call-box">
+              <div class="call-number" id="callNumber">(Set your number)</div>
+              <button class="call-btn" id="callBtn" type="button">Call Now</button>
+              <small class="muted">Typical hours: Mon–Fri, 9am–7pm local. No obligation.</small>
+            </div>
+          </div>
+        </div>
+
+        <div id="resultBad" class="result" role="region" aria-live="polite" style="display:none;">
+          <div class="card" style="background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12">
+            <strong>We’re sorry — you don’t meet the basic requirements.</strong>
+            <div style="margin-top:6px">Common requirements include being in the U.S., currently insured, and vehicle year 2008+.</div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div class="links">
+        <a href="#" rel="nofollow">Privacy Policy</a>
+        <a href="#" rel="nofollow">Terms of Service</a>
+        <a href="#" rel="nofollow">Disclosures</a>
+      </div>
+      <div class="address">
+        © <span id="yr"></span> YourBrand Insurance Services, LLC · 123 Business Rd, Suite 100, City, ST 00000
+      </div>
+      <div class="disclosure" style="max-width:820px;margin:8px auto 0">
+        YourBrand Insurance Services is an independent service that connects consumers with licensed insurance agents and carriers. Availability and eligibility vary by state and policy. This site is not affiliated with any government agency. We may be compensated by the agencies and/or carriers to whom we connect you.
+      </div>
+    </footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
